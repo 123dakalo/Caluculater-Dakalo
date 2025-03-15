@@ -84,7 +84,7 @@ function clear(){
 
 OFF.addEventListener("click", off);
 function off(){
-    inputField.value = '';
+    inputField.value = 'OFF';
 
     const buttons = document.querySelectorAll(".calculator-btns");
     buttons.forEach(button => {
@@ -92,6 +92,8 @@ function off(){
     });
 
     OFF.disabled = true;
+    inputField.disabled = true;
+    inputField = document.getElementById('input').style.color = "black";
 };
 
 ON.addEventListener("click", on);
@@ -104,4 +106,5 @@ function on(){
     });
 
     OFF.disabled = false;
+    inputField.disabled = false;
 };
