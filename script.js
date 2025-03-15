@@ -59,8 +59,8 @@ divid.addEventListener("click", function(){
 dot.addEventListener("click", function(){
     inputField.value += ".";
 });
-percent.addEventListener("click", function(){
-    inputField.value += "%";
+percent.addEventListener("click", function () {
+    inputField.value = parseFloat(inputField.value) / 100;
 });
 multiple.addEventListener("click", function(){
     inputField.value += "*";
@@ -92,4 +92,16 @@ function off(){
     });
 
     OFF.disabled = true;
+};
+
+ON.addEventListener("click", on);
+function on(){
+    inputField.value = '';
+
+    const buttons = document.querySelectorAll(".calculator-btns");
+    buttons.forEach(button => {
+        button.disabled = false;
+    });
+
+    OFF.disabled = false;
 };
